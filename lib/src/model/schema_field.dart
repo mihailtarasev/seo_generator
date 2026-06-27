@@ -1,6 +1,6 @@
-import 'source.dart';
-import 'target.dart';
-import 'validation.dart';
+import 'package:seo_generator/src/model/source.dart';
+import 'package:seo_generator/src/model/target.dart';
+import 'package:seo_generator/src/model/validation.dart';
 
 class SchemaField {
   const SchemaField({

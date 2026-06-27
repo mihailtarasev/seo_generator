@@ -1,6 +1,6 @@
-import '../../model/schema_field.dart';
-import '../validation_exception.dart';
-import '../validation_rule.dart';
+import 'package:seo_generator/src/model/schema_field.dart';
+import 'package:seo_generator/src/validator/validation_exception.dart';
+import 'package:seo_generator/src/validator/validation_rule.dart';
 
 final class PatternRule implements ValidationRule {
   @override

@@ -1,5 +1,7 @@
-import '../../model/schema_field.dart';
-import '../validation_exception.dart';
+// ignore_for_file: always_use_package_imports
+
+import 'package:seo_generator/seo_generator.dart';
+
 import '../validation_rule.dart';
 
 final class TypeRule implements ValidationRule {
@@ -21,11 +23,10 @@ final class TypeRule implements ValidationRule {
     }
 
     final valid = switch (expectedType) {
-      'string' => value is String,
-      'integer' => value is int,
-      'number' => value is num,
-      'boolean' => value is bool,
-      _ => true,
+      ValueType.string => value is String,
+      ValueType.integer => value is int,
+      ValueType.number => value is num,
+      ValueType.boolean => value is bool,
     };
 
     if (!valid) {

@@ -1,4 +1,4 @@
-import '../model/source.dart';
+import 'package:seo_generator/src/model/source.dart';
 
 abstract interface class SourceProvider {
   SourceType get type;

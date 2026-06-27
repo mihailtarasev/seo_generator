@@ -1,11 +1,11 @@
 import 'dart:convert';
 import 'dart:io';
 
-import '../model/schema.dart';
-import '../model/schema_field.dart';
-import '../model/source.dart';
-import '../model/target.dart';
-import '../model/validation.dart';
+import 'package:seo_generator/src/model/schema.dart';
+import 'package:seo_generator/src/model/schema_field.dart';
+import 'package:seo_generator/src/model/source.dart';
+import 'package:seo_generator/src/model/target.dart';
+import 'package:seo_generator/src/model/validation.dart';
 
 final class SchemaLoader {
   const SchemaLoader();

@@ -1,10 +1,9 @@
+import 'package:seo_generator/src/model/schema.dart';
 import 'package:seo_generator/src/model/schema_field.dart';
 import 'package:seo_generator/src/model/target.dart';
-
-import '../model/schema.dart';
-import '../source/source_resolver.dart';
-import '../target/target_registry.dart';
-import '../validator/validator.dart';
+import 'package:seo_generator/src/source/source_resolver.dart';
+import 'package:seo_generator/src/target/target_registry.dart';
+import 'package:seo_generator/src/validator/validator.dart';
 
 final class SchemaEngine {
   const SchemaEngine({

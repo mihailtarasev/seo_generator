@@ -1,5 +1,5 @@
-import '../model/source.dart';
-import 'source_provider.dart';
+import 'package:seo_generator/src/model/source.dart';
+import 'package:seo_generator/src/source/source_provider.dart';
 
 final class ArbProvider implements SourceProvider {
   ArbProvider(this._data);
