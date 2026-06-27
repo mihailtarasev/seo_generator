@@ -1,3 +1,5 @@
+import 'package:seo_generator/src/target/write_request.dart';
+
 enum TargetType {
   html,
 }
@@ -14,4 +16,15 @@ class Target {
   final String selector;
 
   final String? attribute;
+}
+
+extension TargetMapper on Target {
+  WriteRequest toWriteRequest(Object? value) {
+    return WriteRequest(
+      type: type,
+      selector: selector,
+      attribute: attribute,
+      value: value,
+    );
+  }
 }
