@@ -1,0 +1,16 @@
+name: seo_generator
+description: Declarative generator of HTML and structured documents from ARB localization files.
+version: 1.0.0-dev.1
+
+homepage: https://github.com/yourname/seo_generator
+
+environment:
+  sdk: ">=3.5.0 <4.0.0"
+
+dependencies:
+  collection: ^1.19.0
+  html: ^0.15.5
+
+dev_dependencies:
+  lints: ^5.0.0
+  test: ^1.25.8
