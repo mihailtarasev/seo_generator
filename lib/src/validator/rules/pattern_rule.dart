@@ -26,7 +26,7 @@ final class PatternRule implements ValidationRule {
 
     if (!RegExp(pattern).hasMatch(value)) {
       throw ValidationException(
-        'Field "${field.name}" does not match "$pattern".',
+        'Field "${field.source.key}" does not match "$pattern".',
       );
     }
   }

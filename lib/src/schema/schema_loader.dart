@@ -32,21 +32,13 @@ final class SchemaLoader {
   }
 
   Schema fromString(String json) {
-    final map = jsonDecode(json) as Map<String, dynamic>;
-    return fromJson(map);
+    final list = jsonDecode(json) as List<dynamic>;
+    return fromJson(list);
   }
 
-  Schema fromJson(Map<String, dynamic> json) {
-    final fieldsJson = json['fields'];
-
-    if (fieldsJson is! List) {
-      throw const FormatException(
-        'Property "fields" must be an array.',
-      );
-    }
-
+  Schema fromJson(List<dynamic> json) {
     return Schema(
-      fields: fieldsJson
+      fields: json
           .cast<Map<String, dynamic>>()
           .map(_parseField)
           .toList(growable: false),
@@ -55,10 +47,7 @@ final class SchemaLoader {
 
   SchemaField _parseField(Map<String, dynamic> json) {
     return SchemaField(
-      name: json['name'] as String,
-      source: _parseSource(
-        json['source'] as Map<String, dynamic>,
-      ),
+      source: _parseSource(json['source']),
       target: _parseTarget(
         json['target'] as Map<String, dynamic>,
       ),
@@ -70,20 +59,22 @@ final class SchemaLoader {
     );
   }
 
-  Source _parseSource(Map<String, dynamic> json) {
-    return Source(
-      type: _parseSourceType(
-        json['type'] as String,
-      ),
-      key: json['key'] as String,
+  Source _parseSource(Object? json) {
+    if (json is String) {
+      return Source(
+        type: SourceType.arb,
+        key: json,
+      );
+    }
+
+    throw const FormatException(
+      'Property "source" must be a string or an object.',
     );
   }
 
   Target _parseTarget(Map<String, dynamic> json) {
     return Target(
-      type: _parseTargetType(
-        json['type'] as String,
-      ),
+      type: TargetType.html,
       selector: json['selector'] as String,
       attribute: json['attribute'] as String?,
     );

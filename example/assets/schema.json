@@ -1,0 +1,15 @@
+[
+    {
+      "source": "title",
+      "target": {
+        "selector": "title"
+      }
+    },
+    {
+      "source": "description",
+      "target": {
+        "selector": "meta[name='description']",
+        "attribute": "content"
+      }
+    }
+]

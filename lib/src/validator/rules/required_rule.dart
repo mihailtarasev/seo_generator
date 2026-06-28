@@ -20,7 +20,7 @@ final class RequiredRule implements ValidationRule {
 
     if (value == null) {
       throw ValidationException(
-        'Field "${field.name}" is required.',
+        'Field "${field.source.key}" is required.',
       );
     }
   }

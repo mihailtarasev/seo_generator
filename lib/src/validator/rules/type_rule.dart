@@ -31,7 +31,7 @@ final class TypeRule implements ValidationRule {
 
     if (!valid) {
       throw ValidationException(
-        'Field "${field.name}" must be $expectedType.',
+        'Field "${field.source.key}" must be $expectedType.',
       );
     }
   }

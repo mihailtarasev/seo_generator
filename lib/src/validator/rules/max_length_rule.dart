@@ -26,7 +26,7 @@ final class MaxLengthRule implements ValidationRule {
 
     if (value.length > max) {
       throw ValidationException(
-        'Field "${field.name}" must contain at no more than $max characters.',
+        'Field "${field.source.key}" must contain at no more than $max characters.',
       );
     }
   }

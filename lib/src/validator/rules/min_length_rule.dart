@@ -26,7 +26,7 @@ final class MinLengthRule implements ValidationRule {
 
     if (value.length < min) {
       throw ValidationException(
-        'Field "${field.name}" must contain at least $min characters.',
+        'Field "${field.source.key}" must contain at least $min characters.',
       );
     }
   }
