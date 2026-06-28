@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:seo_generator/seo_generator.dart';
 import 'package:seo_generator/src/target/writers/html_target_writer.dart';
 import 'package:seo_generator/src/target/writers/jsonld_target_writer.dart';
+import 'package:seo_generator/src/target/writers/robots_target_writer.dart';
 import 'package:seo_generator/src/target/writers/sitemap_target_writer.dart';
 
 final class GenerationContext {
@@ -34,17 +35,18 @@ final class GenerationContext {
       final html = HtmlEditor.fromString(template);
       final jsonld = JsonLdTargetWriter();
       final sitemap = SitemapTargetWriter();
+      final robots = RobotsTargetWriter();
 
       final engine = SchemaEngine(
         sourceResolver: SourceResolver([
           ArbProvider(arb),
-          ConfigProvider(arb),
         ]),
         validator: Validator(),
         targetRegistry: TargetRegistry([
           HtmlTargetWriter(html),
           jsonld,
           sitemap,
+          robots,
         ]),
       );
 
@@ -60,9 +62,14 @@ final class GenerationContext {
       await output.writeAsString(finalHtml);
 
       // Sitemap
-      final sitemapFile = File('$outputDirectory/$locale/sitemap.html');
+      final sitemapFile = File('$outputDirectory/$locale/sitemap.xml');
       await sitemapFile.create(recursive: true);
       await sitemapFile.writeAsString(sitemap.build());
+
+      // Robots
+      final robotsFile = File('$outputDirectory/robots.txt');
+      await robotsFile.create(recursive: true);
+      await robotsFile.writeAsString(robots.build());
     }
   }
 

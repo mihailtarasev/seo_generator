@@ -4,5 +4,6 @@
   "seoDescription": "Become a warrior against your passions.",
   "jsonLdName": "Battle With Passions2",
   "jsonLdDescription": "A self-improvement RPG that helps users overcome passions and bad habits through gamification.",
-  "sitemap1": "http://battle-with-passions.com/"
+  "sitemap1": "http://battle-with-passions.com/",
+  "seoRobots": "http://battle-with-passions.com/sitemap.xml"
 }

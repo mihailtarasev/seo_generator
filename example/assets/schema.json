@@ -33,12 +33,17 @@
         "selector": "jsonLdDescription"
       }
     },
-        {
+    {
     "source": "sitemap1",
     "target": {
-        "type": "sitemap",
-        "selector": "sitemap"
+        "type": "sitemap"
       }
+    },
+    {
+    "source": "seoRobots",
+    "target": {
+        "type": "robots"
+        }
     }
 
 

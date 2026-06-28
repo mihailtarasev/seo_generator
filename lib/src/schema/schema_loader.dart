@@ -83,9 +83,12 @@ final class SchemaLoader {
   }
 
   Target _parseTarget(Map<String, dynamic> json) {
+    final type = _parseTargetType(json);
+    dynamic selector = json['selector'];
+    selector ??= type.name;
     return Target(
-      type: _parseTargetType(json),
-      selector: json['selector'] as String,
+      type: type,
+      selector: selector as String,
       attribute: json['attribute'] as String?,
     );
   }
