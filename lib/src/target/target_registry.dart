@@ -1,25 +1,15 @@
-import 'package:seo_generator/src/model/target.dart';
-import 'package:seo_generator/src/target/target_writer.dart';
-import 'package:seo_generator/src/target/write_request.dart';
+import 'package:seo_generator/seo_generator.dart';
 
 final class TargetRegistry {
-  TargetRegistry(
-    Iterable<TargetWriter> writers,
-  ) : _writers = {
-          for (final writer in writers) writer.type: writer,
-        };
+  TargetRegistry(this._writers);
 
-  final Map<TargetType, TargetWriter> _writers;
+  final List<TargetWriter> _writers;
 
   void write(WriteRequest request) {
-    final writer = _writers[request.type];
-
-    if (writer == null) {
-      throw StateError(
-        'No writer registered for ${request.type.name}.',
-      );
+    for (final writer in _writers) {
+      if (writer.supports(request.type)) {
+        writer.write(request);
+      }
     }
-
-    writer.write(request);
   }
 }

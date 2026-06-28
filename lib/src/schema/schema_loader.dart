@@ -17,6 +17,7 @@ final class SchemaLoader {
 
   static const _targetTypes = {
     'html': TargetType.html,
+    'jsonLd': TargetType.jsonLd,
   };
 
   static const _valueTypes = {
@@ -47,7 +48,7 @@ final class SchemaLoader {
 
   SchemaField _parseField(Map<String, dynamic> json) {
     return SchemaField(
-      source: _parseSource(json['source']),
+      source: _parseSource(json),
       target: _parseTarget(
         json['target'] as Map<String, dynamic>,
       ),
@@ -59,11 +60,18 @@ final class SchemaLoader {
     );
   }
 
-  Source _parseSource(Object? json) {
-    if (json is String) {
+  Source _parseSource(Map<String, dynamic> json) {
+    final source = json['source'];
+    if (source is Map<String, dynamic>) {
+      return Source(
+        type: _parseSourceType(source['type'] as String),
+        key: source['key'] as String,
+      );
+    }
+    if (source is String) {
       return Source(
         type: SourceType.arb,
-        key: json,
+        key: source,
       );
     }
 
@@ -74,7 +82,7 @@ final class SchemaLoader {
 
   Target _parseTarget(Map<String, dynamic> json) {
     return Target(
-      type: TargetType.html,
+      type: _parseTargetType(json),
       selector: json['selector'] as String,
       attribute: json['attribute'] as String?,
     );
@@ -102,7 +110,9 @@ final class SchemaLoader {
     return type;
   }
 
-  TargetType _parseTargetType(String value) {
+  TargetType _parseTargetType(Map<String, dynamic> json) {
+    dynamic value = json['type'];
+    value ??= 'html';
     final type = _targetTypes[value];
     if (type == null) {
       throw FormatException('Unknown target type "$value".');

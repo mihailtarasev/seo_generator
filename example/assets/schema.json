@@ -1,5 +1,12 @@
 [
     {
+      "source": "@@locale",
+      "target": {
+        "selector": "html",
+        "attribute": "lang"
+      }
+    },
+    {
       "source": "title",
       "target": {
         "selector": "title"
@@ -10,6 +17,13 @@
       "target": {
         "selector": "meta[name='description']",
         "attribute": "content"
+      }
+    },
+    {
+    "source": "siteName",
+    "target": {
+        "type": "jsonLd",
+        "selector": "name"
       }
     }
 ]

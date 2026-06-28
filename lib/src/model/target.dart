@@ -2,6 +2,9 @@ import 'package:seo_generator/src/target/write_request.dart';
 
 enum TargetType {
   html,
+  jsonLd,
+  sitemap,
+  robots,
 }
 
 class Target {

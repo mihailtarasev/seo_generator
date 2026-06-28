@@ -5,4 +5,6 @@ abstract interface class TargetWriter {
   TargetType get type;
 
   void write(WriteRequest request);
+
+  bool supports(TargetType type);
 }

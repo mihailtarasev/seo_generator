@@ -12,6 +12,9 @@ final class HtmlTargetWriter implements TargetWriter {
   TargetType get type => TargetType.html;
 
   @override
+  bool supports(TargetType type) => this.type == type;
+
+  @override
   void write(WriteRequest target) {
     _document.write(
       selector: target.selector,

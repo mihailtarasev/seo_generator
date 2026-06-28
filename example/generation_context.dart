@@ -3,17 +3,20 @@ import 'dart:io';
 
 import 'package:seo_generator/seo_generator.dart';
 import 'package:seo_generator/src/target/writers/html_target_writer.dart';
+import 'package:seo_generator/src/target/writers/jsonld_target_writer.dart';
 
 final class GenerationContext {
   final String schemaPath;
   final String templatePath;
   final String arbDirectory;
+  final String configPath;
   final String outputDirectory;
 
   const GenerationContext({
     required this.schemaPath,
     required this.templatePath,
     required this.arbDirectory,
+    required this.configPath,
     required this.outputDirectory,
   });
 
@@ -28,14 +31,17 @@ final class GenerationContext {
       final arb = entry.value;
 
       final html = HtmlEditor.fromString(template);
+      final jsonld = JsonLdTargetWriter();
 
       final engine = SchemaEngine(
         sourceResolver: SourceResolver([
           ArbProvider(arb),
+          ConfigProvider(arb),
         ]),
         validator: Validator(),
         targetRegistry: TargetRegistry([
           HtmlTargetWriter(html),
+          jsonld,
         ]),
       );
 
@@ -44,17 +50,24 @@ final class GenerationContext {
       final output = File('$outputDirectory/$locale/index.html');
       await output.create(recursive: true);
 
-      await output.writeAsString(html.toHtml());
+      final toHtml = html.toHtml();
+      final jsonldToHtml = jsonld.build();
+      final finalHtml = toHtml.replaceFirst('</head>', jsonldToHtml);
+
+      await output.writeAsString(finalHtml);
+
+      // JSON-LD
+      // final jsonLdFile = File('$outputDirectory/seo.jsonld');
+      // await jsonLdFile.create(recursive: true);
+      // await jsonLdFile.writeAsString(jsonld.build());
     }
   }
 
   Future<Map<String, Map<String, dynamic>>> _loadArbFiles() async {
     final dir = Directory(arbDirectory);
 
-    final files = await dir
-        .list()
-        .where((f) => f.path.endsWith('.arb'))
-        .toList();
+    final files =
+        await dir.list().where((f) => f.path.endsWith('.arb')).toList();
 
     final result = <String, Map<String, dynamic>>{};
 
