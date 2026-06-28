@@ -20,6 +20,27 @@
       }
     },
     {
+      "source": "seoKeywords",
+      "target": {
+        "selector": "meta[name='keywords']",
+        "attribute": "content"
+      }
+    },
+    {
+      "source": "seoOgTitle",
+      "target": {
+        "selector": "meta[property='og:title']",
+        "attribute": "content"
+      }
+    },
+    {
+      "source": "seoOgDescription",
+      "target": {
+        "selector": "meta[property='og:description']",
+        "attribute": "content"
+      }
+    },
+    {
     "source": "jsonLdName",
     "target": {
         "type": "jsonLd",
@@ -45,7 +66,6 @@
         "type": "robots"
         }
     }
-
 
     
 ]
