@@ -1,6 +1,8 @@
 {
   "@@locale": "en",
-  "title": "Battle With Passions123",
-  "description": "Become a warrior against your passions.",
-  "siteName": "Battle With Passions2"
+  "seoTitle": "Battle With Passions123",
+  "seoDescription": "Become a warrior against your passions.",
+  "jsonLdName": "Battle With Passions2",
+  "jsonLdDescription": "A self-improvement RPG that helps users overcome passions and bad habits through gamification.",
+  "sitemap1": "http://battle-with-passions.com/"
 }

@@ -7,23 +7,40 @@
       }
     },
     {
-      "source": "title",
+      "source": "seoTitle",
       "target": {
         "selector": "title"
       }
     },
     {
-      "source": "description",
+      "source": "seoDescription",
       "target": {
         "selector": "meta[name='description']",
         "attribute": "content"
       }
     },
     {
-    "source": "siteName",
+    "source": "jsonLdName",
     "target": {
         "type": "jsonLd",
-        "selector": "name"
+        "selector": "jsonLdName"
+      }
+    },
+    {
+    "source": "jsonLdDescription",
+    "target": {
+        "type": "jsonLd",
+        "selector": "jsonLdDescription"
+      }
+    },
+        {
+    "source": "sitemap1",
+    "target": {
+        "type": "sitemap",
+        "selector": "sitemap"
       }
     }
+
+
+    
 ]

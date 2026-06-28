@@ -18,6 +18,8 @@ final class SchemaLoader {
   static const _targetTypes = {
     'html': TargetType.html,
     'jsonLd': TargetType.jsonLd,
+    'sitemap': TargetType.sitemap,
+    'robots': TargetType.robots,
   };
 
   static const _valueTypes = {

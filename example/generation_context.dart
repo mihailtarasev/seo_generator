@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:seo_generator/seo_generator.dart';
 import 'package:seo_generator/src/target/writers/html_target_writer.dart';
 import 'package:seo_generator/src/target/writers/jsonld_target_writer.dart';
+import 'package:seo_generator/src/target/writers/sitemap_target_writer.dart';
 
 final class GenerationContext {
   final String schemaPath;
@@ -32,6 +33,7 @@ final class GenerationContext {
 
       final html = HtmlEditor.fromString(template);
       final jsonld = JsonLdTargetWriter();
+      final sitemap = SitemapTargetWriter();
 
       final engine = SchemaEngine(
         sourceResolver: SourceResolver([
@@ -42,6 +44,7 @@ final class GenerationContext {
         targetRegistry: TargetRegistry([
           HtmlTargetWriter(html),
           jsonld,
+          sitemap,
         ]),
       );
 
@@ -56,10 +59,10 @@ final class GenerationContext {
 
       await output.writeAsString(finalHtml);
 
-      // JSON-LD
-      // final jsonLdFile = File('$outputDirectory/seo.jsonld');
-      // await jsonLdFile.create(recursive: true);
-      // await jsonLdFile.writeAsString(jsonld.build());
+      // Sitemap
+      final sitemapFile = File('$outputDirectory/$locale/sitemap.html');
+      await sitemapFile.create(recursive: true);
+      await sitemapFile.writeAsString(sitemap.build());
     }
   }
 

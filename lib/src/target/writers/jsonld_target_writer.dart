@@ -15,8 +15,6 @@ final class JsonLdTargetWriter implements TargetWriter {
 
   @override
   void write(WriteRequest request) {
-    print(request.selector);
-    print(request.value);
     _data[request.selector] = request.value;
   }
 
@@ -25,10 +23,10 @@ final class JsonLdTargetWriter implements TargetWriter {
 <script type="application/ld+json">
   "@context":"https://schema.org",
   "@type":"SoftwareApplication",
-  "name":${jsonEncode(_data['name'])},
+  "name":${jsonEncode(_data['jsonLdName'])},
   "applicationCategory":"GameApplication",
   "operatingSystem":"Android, iOS",
-  "description":"A self-improvement RPG that helps users overcome passions and bad habits through gamification."
+  "description":${jsonEncode(_data['jsonLdDescription'])},
 
 </script>
 </head>

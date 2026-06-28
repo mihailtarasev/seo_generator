@@ -1,6 +1,8 @@
 {
   "@@locale": "ru",
-  "title": "Battle With Passions",
-  "description": "Стань воином, сражающимся со своими страстями.",
-  "siteName": "Battle With Passions3"
+  "seoTitle": "Battle With Passions",
+  "seoDescription": "Стань воином, сражающимся со своими страстями.",
+  "jsonLdName": "Битва со Страстями",
+  "jsonLdDescription": "RPG для саморазвития, помогающая пользователям преодолевать пагубные страсти и вредные привычки с помощью геймификации.",
+  "sitemap1": "http://battle-with-passions.com/"
 }
