@@ -11,14 +11,12 @@ final class GenerationContext {
   final String schemaPath;
   final String templatePath;
   final String arbDirectory;
-  final String configPath;
   final String outputDirectory;
 
   const GenerationContext({
     required this.schemaPath,
     required this.templatePath,
     required this.arbDirectory,
-    required this.configPath,
     required this.outputDirectory,
   });
 

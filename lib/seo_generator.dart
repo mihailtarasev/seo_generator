@@ -1,6 +1,8 @@
 // ignore: unnecessary_library_name
 library seo_generator;
 
+// Framework
+export 'framework/seo_generator.dart';
 // Generator
 export 'src/generator/schema_engine.dart';
 // HTML

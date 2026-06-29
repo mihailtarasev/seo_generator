@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: http://battle-with-passions.com/sitemap.xml
+Sitemap: https://battle-with-passions.com/sitemap.xml
 

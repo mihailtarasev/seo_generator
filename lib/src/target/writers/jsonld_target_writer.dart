@@ -21,13 +21,22 @@ final class JsonLdTargetWriter implements TargetWriter {
   String build() {
     return '''
 <script type="application/ld+json">
+{
   "@context":"https://schema.org",
   "@type":"SoftwareApplication",
-  "name":${jsonEncode(_data['jsonLdName'])},
+  "name":${jsonEncode(_data['seoJsonLdName'])},
+  "description":${jsonEncode(_data['seoJsonLdDescription'])}
+  "url": ${jsonEncode(_data['seoJsonLdUrl'])},
+  "image": ${jsonEncode(_data['seoJsonLdImage'])},
   "applicationCategory":"GameApplication",
   "operatingSystem":"Android, iOS",
-  "description":${jsonEncode(_data['jsonLdDescription'])},
-
+  "inLanguage": ${jsonEncode(_data['seoJsonLdLanguage'])},
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
 </script>
 </head>
 ''';

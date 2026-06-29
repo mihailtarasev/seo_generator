@@ -1,6 +1,6 @@
 [
     {
-      "source": "@@locale",
+      "source": "seoLocale",
       "target": {
         "selector": "html",
         "attribute": "lang"
@@ -41,21 +41,97 @@
       }
     },
     {
-    "source": "jsonLdName",
-    "target": {
-        "type": "jsonLd",
-        "selector": "jsonLdName"
+      "source": "seoOgImage",
+      "target": {
+        "selector": "meta[property='og:image']",
+        "attribute": "content"
       }
     },
     {
-    "source": "jsonLdDescription",
-    "target": {
-        "type": "jsonLd",
-        "selector": "jsonLdDescription"
+      "source": "seoOgSiteName",
+      "target": {
+        "selector": "meta[property='og:site_name']",
+        "attribute": "content"
       }
     },
     {
-    "source": "sitemap1",
+      "source": "seoOgLocale",
+      "target": {
+        "selector": "meta[property='og:locale']",
+        "attribute": "content"
+      }
+    },
+    {
+      "source": "seoTwitterTitle",
+      "target": {
+        "selector": "meta[name='twitter:title']",
+        "attribute": "content"
+      }
+    },
+    {
+      "source": "seoTwitterDescription",
+      "target": {
+        "selector": "meta[name='twitter:description']",
+        "attribute": "content"
+      }
+    },
+    {
+      "source": "seoTwitterImage",
+      "target": {
+        "selector": "meta[name='twitter:image']",
+        "attribute": "content"
+      }
+    },
+    {
+      "source": "seoCanonical",
+      "target": {
+        "selector": "link[rel='canonical']",
+        "attribute": "href"
+      }
+    },
+    {
+    "source": "seoJsonLdName",
+    "target": {
+        "type": "jsonLd",
+        "selector": "seoJsonLdName"
+      }
+    },
+    {
+    "source": "seoJsonLdDescription",
+    "target": {
+        "type": "jsonLd",
+        "selector": "seoJsonLdDescription"
+      }
+    },
+    {
+    "source": "seoJsonLdUrl",
+    "target": {
+        "type": "jsonLd",
+        "selector": "seoJsonLdUrl"
+      }
+    },
+    {
+    "source": "seoJsonLdImage",
+    "target": {
+        "type": "jsonLd",
+        "selector": "seoJsonLdImage"
+      }
+    },
+    {
+    "source": "seoJsonLdLanguage",
+    "target": {
+        "type": "jsonLd",
+        "selector": "seoJsonLdLanguage"
+      }
+    },
+    {
+    "source": "seoSitemap",
+    "target": {
+        "type": "sitemap"
+      }
+    },
+    {
+    "source": "seoSitemapRoot",
     "target": {
         "type": "sitemap"
       }

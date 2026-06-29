@@ -15,3 +15,6 @@ Declarative generator of HTML and structured documents from ARB localization fil
 ## Status
 
 🚧 Under development.
+
+## Run example
+dart run example/main.dart
