@@ -31,9 +31,6 @@ final class GenerationContext {
       final arb = entry.value;
 
       final html = HtmlEditor.fromString(template);
-      final jsonld = JsonLdTargetWriter();
-      final sitemap = SitemapTargetWriter();
-      final robots = RobotsTargetWriter();
 
       final engine = SchemaEngine(
         sourceResolver: SourceResolver([
@@ -42,9 +39,9 @@ final class GenerationContext {
         validator: Validator(),
         targetRegistry: TargetRegistry([
           HtmlTargetWriter(html),
-          jsonld,
-          sitemap,
-          robots,
+          JsonLdTargetWriter(html),
+          SitemapTargetWriter(outputDirectory, locale),
+          RobotsTargetWriter(outputDirectory),
         ]),
       );
 
@@ -53,21 +50,8 @@ final class GenerationContext {
       final output = File('$outputDirectory/$locale/index.html');
       await output.create(recursive: true);
 
-      final toHtml = html.toHtml();
-      final jsonldToHtml = jsonld.build();
-      final finalHtml = toHtml.replaceFirst('</head>', jsonldToHtml);
-
+      final finalHtml = html.toHtml();
       await output.writeAsString(finalHtml);
-
-      // Sitemap
-      final sitemapFile = File('$outputDirectory/$locale/sitemap.xml');
-      await sitemapFile.create(recursive: true);
-      await sitemapFile.writeAsString(sitemap.build());
-
-      // Robots
-      final robotsFile = File('$outputDirectory/robots.txt');
-      await robotsFile.create(recursive: true);
-      await robotsFile.writeAsString(robots.build());
     }
   }
 

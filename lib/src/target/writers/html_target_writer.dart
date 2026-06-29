@@ -8,6 +8,8 @@ final class HtmlTargetWriter implements TargetWriter {
 
   final HtmlEditor _document;
 
+  final Map<String, dynamic> _data = {};
+
   @override
   TargetType get type => TargetType.html;
 
@@ -15,11 +17,23 @@ final class HtmlTargetWriter implements TargetWriter {
   bool supports(TargetType type) => this.type == type;
 
   @override
-  void write(WriteRequest target) {
+  void build(WriteRequest request) {
+    _data[request.selector] = request;
+  }
+
+  @override
+  void write() {
+    for (final entries in _data.entries) {
+      _writeSelector(entries.key, entries.value);
+    }
+  }
+
+  void _writeSelector(String selector, dynamic request) {
+    (request as WriteRequest);
     _document.write(
-      selector: target.selector,
-      attribute: target.attribute,
-      value: target.value,
+      selector: selector,
+      attribute: request.attribute,
+      value: request.value,
     );
   }
 }

@@ -4,7 +4,10 @@ import 'package:seo_generator/src/target/write_request.dart';
 abstract interface class TargetWriter {
   TargetType get type;
 
-  void write(WriteRequest request);
+  void build(WriteRequest request);
+
+  void write();
 
   bool supports(TargetType type);
+  
 }

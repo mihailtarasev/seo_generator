@@ -1,4 +1,10 @@
 {
-  "siteUrl": "https://battlewithpassions.com",
-  "siteName": "Battle With Passions2"
+  "siteUrl": "https://battle-with-passions.com",
+  "defaultLocale": "en",
+
+  "locales": [
+    "en",
+    "ru",
+    "de"
+  ]
 }

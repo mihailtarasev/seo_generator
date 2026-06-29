@@ -1,5 +1,6 @@
 import 'package:html/dom.dart';
 import 'package:html/parser.dart';
+import 'package:seo_generator/src/extension/element.dart';
 
 final class HtmlEditor {
   HtmlEditor._(this._document);
@@ -16,6 +17,19 @@ final class HtmlEditor {
 
   String toHtml() {
     return _document.outerHtml;
+  }
+
+  void setScript({
+    required String type,
+    required String content,
+  }) {
+    Element? script = _document.querySelector(
+      'script[type="$type"]',
+    );
+
+    script ??= Element.tag('script')..setAttribute('type', type);
+
+    script.text = content;
   }
 
   void write({

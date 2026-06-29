@@ -20,16 +20,19 @@ final class SchemaEngine {
 
   void execute(Schema schema) {
     for (final field in schema.fields) {
-      _executeField(field);
+      _buildField(field);
+    }
+    for (final writer in _targetRegistry.writers) {
+      writer.write();
     }
   }
 
-  void _executeField(SchemaField field) {
+  void _buildField(SchemaField field) {
     final value = _sourceResolver.resolve(field.source);
 
     _validator.validate(field, value);
 
-    _targetRegistry.write(
+    _targetRegistry.build(
       field.target.toWriteRequest(value),
     );
   }

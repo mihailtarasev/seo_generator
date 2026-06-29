@@ -62,6 +62,13 @@
       }
     },
     {
+      "source": "seoOgUrl",
+      "target": {
+        "selector": "meta[property='og:url']",
+        "attribute": "content"
+      }
+    },
+    {
       "source": "seoTwitterTitle",
       "target": {
         "selector": "meta[name='twitter:title']",
@@ -93,35 +100,35 @@
     "source": "seoJsonLdName",
     "target": {
         "type": "jsonLd",
-        "selector": "seoJsonLdName"
+        "selector": "name"
       }
     },
     {
     "source": "seoJsonLdDescription",
     "target": {
         "type": "jsonLd",
-        "selector": "seoJsonLdDescription"
+        "selector": "description"
       }
     },
     {
     "source": "seoJsonLdUrl",
     "target": {
         "type": "jsonLd",
-        "selector": "seoJsonLdUrl"
+        "selector": "url"
       }
     },
     {
     "source": "seoJsonLdImage",
     "target": {
         "type": "jsonLd",
-        "selector": "seoJsonLdImage"
+        "selector": "image"
       }
     },
     {
     "source": "seoJsonLdLanguage",
     "target": {
         "type": "jsonLd",
-        "selector": "seoJsonLdLanguage"
+        "selector": "language"
       }
     },
     {
