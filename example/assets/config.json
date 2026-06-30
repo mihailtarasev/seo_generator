@@ -2,14 +2,19 @@
   "siteUrl": "https://battle-with-passions.com",
   "robots": "https://battle-with-passions.com/sitemap.xml",
   "ogImage": "https://battle-with-passions.com/ogimage.jpg",
+  "ogAlternate": ["en_US", "ru_RU"],
   "alternate": [
     {
-      "hreflang":"en", 
+      "hreflang":"en-US", 
       "href":"https://battle-with-passions.com/"
     },
     {
-      "hreflang":"ru", 
+      "hreflang":"ru-RU", 
       "href":"https://battle-with-passions.com/ru/"
+    },
+    {
+      "hreflang":"x-default", 
+      "href":"https://battle-with-passions.com/"
     }
   ]
 }

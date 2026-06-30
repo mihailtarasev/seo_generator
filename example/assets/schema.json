@@ -6,6 +6,19 @@
       }
     },
     {
+      "source": "config.ogAlternate",
+      "target": {
+        "type": "ogAlternate"
+      }
+    },
+    {
+      "source": "seoRegionalLocale",
+      "target": {
+        "type": "ogAlternate",
+        "selector": "siteLocale"
+      }
+    },
+    {
       "source": "seoLocale",
       "target": {
         "selector": "html",
@@ -33,14 +46,14 @@
       }
     },
     {
-      "source": "seoLongTitle",
+      "source": "seoTitle",
       "target": {
         "selector": "meta[property='og:title']",
         "attribute": "content"
       }
     },
     {
-      "source": "seoLongDescription",
+      "source": "seoDescription",
       "target": {
         "selector": "meta[property='og:description']",
         "attribute": "content"
@@ -54,14 +67,14 @@
       }
     },
     {
-      "source": "seoTitle",
+      "source": "seoSiteName",
       "target": {
         "selector": "meta[property='og:site_name']",
         "attribute": "content"
       }
     },
     {
-      "source": "seoOgLocale",
+      "source": "seoRegionalLocale",
       "target": {
         "selector": "meta[property='og:locale']",
         "attribute": "content"
@@ -82,7 +95,7 @@
       }
     },
     {
-      "source": "seoLongDescription",
+      "source": "seoDescription",
       "target": {
         "selector": "meta[name='twitter:description']",
         "attribute": "content"
@@ -103,14 +116,14 @@
       }
     },
     {
-    "source": "seoTitle",
+    "source": "seoSiteName",
     "target": {
         "type": "jsonLd",
         "selector": "name"
       }
     },
     {
-    "source": "seoLongDescription",
+    "source": "seoDescription",
     "target": {
         "type": "jsonLd",
         "selector": "description"

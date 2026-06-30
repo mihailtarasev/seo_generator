@@ -32,6 +32,13 @@ final class HtmlEditor {
     script.text = content;
   }
 
+  void addHeadElement(Element element) {
+    final head = _document.head!;
+    head.nodes.add(Text('  '));
+    head.append(element);
+    head.nodes.add(Text('\n'));
+  }
+
   void write({
     required String selector,
     String? attribute,

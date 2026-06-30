@@ -5,6 +5,7 @@ import 'package:seo_generator/seo_generator.dart';
 import 'package:seo_generator/src/target/writers/alternate_target_writer.dart';
 import 'package:seo_generator/src/target/writers/html_target_writer.dart';
 import 'package:seo_generator/src/target/writers/jsonld_target_writer.dart';
+import 'package:seo_generator/src/target/writers/og_alternate_target_writer.dart';
 import 'package:seo_generator/src/target/writers/robots_target_writer.dart';
 import 'package:seo_generator/src/target/writers/sitemap_target_writer.dart';
 
@@ -48,6 +49,7 @@ final class GenerationContext {
           AlternateTargetWriter(html),
           SitemapTargetWriter(outputDirectory, locale),
           RobotsTargetWriter(outputDirectory),
+          OgAlternateTargetWriter(html),
         ]),
       );
 

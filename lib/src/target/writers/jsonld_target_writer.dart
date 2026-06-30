@@ -24,7 +24,6 @@ final class JsonLdTargetWriter implements TargetWriter {
   @override
   void write() {
     final content = '''
-<script type="application/ld+json">
 {
   "@context":"https://schema.org",
   "@type":"SoftwareApplication",
@@ -41,8 +40,6 @@ final class JsonLdTargetWriter implements TargetWriter {
     "priceCurrency": "USD"
   }
 }
-</script>
-</head>
 ''';
     _document.setScript(type: 'application/ld+json', content: content);
   }

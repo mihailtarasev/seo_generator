@@ -6,6 +6,7 @@ enum TargetType {
   sitemap,
   robots,
   alternate,
+  ogAlternate,
 }
 
 class Target {

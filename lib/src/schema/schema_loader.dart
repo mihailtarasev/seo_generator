@@ -21,6 +21,7 @@ final class SchemaLoader {
     'sitemap': TargetType.sitemap,
     'robots': TargetType.robots,
     'alternate': TargetType.alternate,
+    'ogAlternate': TargetType.ogAlternate,
   };
 
   static const _valueTypes = {

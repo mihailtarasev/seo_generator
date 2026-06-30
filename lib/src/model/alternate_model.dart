@@ -1,15 +1,16 @@
-import 'package:seo_generator/seo_generator.dart';
-
 class AlternateModel {
-  String? hreflang;
-  String? href;
+  AlternateModel({
+    required this.hreflang,
+    required this.href,
+  });
 
-  late final Map<String, void Function(String?)> _setters = {
-    'hreflang': (v) => hreflang = v,
-    'href': (v) => href = v,
-  };
+  String hreflang;
+  String href;
 
-  void build(WriteRequest request) {
-    _setters[request.selector]?.call(request.value as String);
+  factory AlternateModel.fromJson(Map<String, dynamic> json) {
+    return AlternateModel(
+      hreflang: json['hreflang'] as String,
+      href: json['href'] as String,
+    );
   }
 }
