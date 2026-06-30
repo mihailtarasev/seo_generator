@@ -153,15 +153,25 @@
     {
     "source": "seoUrl",
     "target": {
-        "type": "sitemap"
+        "type": "sitemap",
+        "selector": "url"
       }
     },
     {
     "source": "config.siteUrl",
     "target": {
-        "type": "sitemap"
+        "type": "sitemap",
+        "selector": "url"
       }
     },
+    {
+    "source": "config.alternate",
+    "target": {
+        "type": "sitemap",
+        "selector": "alternate"
+      }
+    },
+
     {
     "source": "config.robots",
     "target": {

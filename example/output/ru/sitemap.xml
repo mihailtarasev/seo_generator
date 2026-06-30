@@ -1,4 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset>
-<url><loc>https://battle-with-passions.com/ru/</loc></url><url><loc>https://battle-with-passions.com</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<url><loc>https://battle-with-passions.com/ru/</loc>
+<xhtml:link
+        rel="alternate"
+        hreflang="en-US"
+        href="https://battle-with-passions.com/" />
+<xhtml:link
+        rel="alternate"
+        hreflang="ru-RU"
+        href="https://battle-with-passions.com/ru/" />
+<xhtml:link
+        rel="alternate"
+        hreflang="x-default"
+        href="https://battle-with-passions.com/" />
+
+</url>
+<url><loc>https://battle-with-passions.com/</loc>
+<xhtml:link
+        rel="alternate"
+        hreflang="en-US"
+        href="https://battle-with-passions.com/" />
+<xhtml:link
+        rel="alternate"
+        hreflang="ru-RU"
+        href="https://battle-with-passions.com/ru/" />
+<xhtml:link
+        rel="alternate"
+        hreflang="x-default"
+        href="https://battle-with-passions.com/" />
+
+</url>
+
 </urlset>
