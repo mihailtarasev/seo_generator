@@ -1,5 +1,11 @@
 [
     {
+      "source": "config.alternate",
+      "target": {
+        "type": "alternate"
+      }
+    },
+    {
       "source": "seoLocale",
       "target": {
         "selector": "html",
@@ -27,28 +33,28 @@
       }
     },
     {
-      "source": "seoOgTitle",
+      "source": "seoLongTitle",
       "target": {
         "selector": "meta[property='og:title']",
         "attribute": "content"
       }
     },
     {
-      "source": "seoOgDescription",
+      "source": "seoLongDescription",
       "target": {
         "selector": "meta[property='og:description']",
         "attribute": "content"
       }
     },
     {
-      "source": "seoOgImage",
+      "source": "config.ogImage",
       "target": {
         "selector": "meta[property='og:image']",
         "attribute": "content"
       }
     },
     {
-      "source": "seoOgSiteName",
+      "source": "seoTitle",
       "target": {
         "selector": "meta[property='og:site_name']",
         "attribute": "content"
@@ -62,89 +68,89 @@
       }
     },
     {
-      "source": "seoOgUrl",
+      "source": "seoUrl",
       "target": {
         "selector": "meta[property='og:url']",
         "attribute": "content"
       }
     },
     {
-      "source": "seoTwitterTitle",
+      "source": "seoLongTitle",
       "target": {
         "selector": "meta[name='twitter:title']",
         "attribute": "content"
       }
     },
     {
-      "source": "seoTwitterDescription",
+      "source": "seoLongDescription",
       "target": {
         "selector": "meta[name='twitter:description']",
         "attribute": "content"
       }
     },
     {
-      "source": "seoTwitterImage",
+      "source": "config.ogImage",
       "target": {
         "selector": "meta[name='twitter:image']",
         "attribute": "content"
       }
     },
     {
-      "source": "seoCanonical",
+      "source": "seoUrl",
       "target": {
         "selector": "link[rel='canonical']",
         "attribute": "href"
       }
     },
     {
-    "source": "seoJsonLdName",
+    "source": "seoTitle",
     "target": {
         "type": "jsonLd",
         "selector": "name"
       }
     },
     {
-    "source": "seoJsonLdDescription",
+    "source": "seoLongDescription",
     "target": {
         "type": "jsonLd",
         "selector": "description"
       }
     },
     {
-    "source": "seoJsonLdUrl",
+    "source": "seoUrl",
     "target": {
         "type": "jsonLd",
         "selector": "url"
       }
     },
     {
-    "source": "seoJsonLdImage",
+    "source": "config.ogImage",
     "target": {
         "type": "jsonLd",
         "selector": "image"
       }
     },
     {
-    "source": "seoJsonLdLanguage",
+    "source": "seoLocale",
     "target": {
         "type": "jsonLd",
         "selector": "language"
       }
     },
     {
-    "source": "seoSitemap",
+    "source": "seoUrl",
     "target": {
         "type": "sitemap"
       }
     },
     {
-    "source": "seoSitemapRoot",
+    "source": "config.siteUrl",
     "target": {
         "type": "sitemap"
       }
     },
     {
-    "source": "seoRobots",
+    "source": "config.robots",
     "target": {
         "type": "robots"
         }

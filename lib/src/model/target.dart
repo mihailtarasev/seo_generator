@@ -5,6 +5,7 @@ enum TargetType {
   jsonLd,
   sitemap,
   robots,
+  alternate,
 }
 
 class Target {

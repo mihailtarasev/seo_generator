@@ -28,7 +28,7 @@ final class SchemaEngine {
   }
 
   void _buildField(SchemaField field) {
-    final value = _sourceResolver.resolve(field.source);
+    final value = _sourceResolver.resolve(field.source.key);
 
     _validator.validate(field, value);
 

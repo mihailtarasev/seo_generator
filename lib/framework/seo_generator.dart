@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:seo_generator/seo_generator.dart';
+import 'package:seo_generator/src/target/writers/alternate_target_writer.dart';
 import 'package:seo_generator/src/target/writers/html_target_writer.dart';
 import 'package:seo_generator/src/target/writers/jsonld_target_writer.dart';
 import 'package:seo_generator/src/target/writers/robots_target_writer.dart';
@@ -10,12 +11,14 @@ import 'package:seo_generator/src/target/writers/sitemap_target_writer.dart';
 final class GenerationContext {
   final String schemaPath;
   final String templatePath;
+  final String configPath;
   final String arbDirectory;
   final String outputDirectory;
 
   const GenerationContext({
     required this.schemaPath,
     required this.templatePath,
+    required this.configPath,
     required this.arbDirectory,
     required this.outputDirectory,
   });
@@ -25,6 +28,7 @@ final class GenerationContext {
     final template = await File(templatePath).readAsString();
 
     final arbFiles = await _loadArbFiles();
+    final config = await _loadConfig();
 
     for (final entry in arbFiles.entries) {
       final locale = entry.key;
@@ -35,11 +39,13 @@ final class GenerationContext {
       final engine = SchemaEngine(
         sourceResolver: SourceResolver([
           ArbProvider(arb),
+          ConfigProvider(config),
         ]),
         validator: Validator(),
         targetRegistry: TargetRegistry([
           HtmlTargetWriter(html),
           JsonLdTargetWriter(html),
+          AlternateTargetWriter(html),
           SitemapTargetWriter(outputDirectory, locale),
           RobotsTargetWriter(outputDirectory),
         ]),
@@ -53,6 +59,13 @@ final class GenerationContext {
       final finalHtml = html.toHtml();
       await output.writeAsString(finalHtml);
     }
+  }
+
+  Future<Map<String, dynamic>> _loadConfig() async {
+    final file = File(configPath);
+    final content = await File(file.path).readAsString();
+    final json = jsonDecode(content) as Map<String, dynamic>;
+    return json;
   }
 
   Future<Map<String, Map<String, dynamic>>> _loadArbFiles() async {

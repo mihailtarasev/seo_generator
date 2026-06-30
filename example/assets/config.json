@@ -1,10 +1,15 @@
 {
   "siteUrl": "https://battle-with-passions.com",
-  "defaultLocale": "en",
-
-  "locales": [
-    "en",
-    "ru",
-    "de"
+  "robots": "https://battle-with-passions.com/sitemap.xml",
+  "ogImage": "https://battle-with-passions.com/ogimage.jpg",
+  "alternate": [
+    {
+      "hreflang":"en", 
+      "href":"https://battle-with-passions.com/"
+    },
+    {
+      "hreflang":"ru", 
+      "href":"https://battle-with-passions.com/ru/"
+    }
   ]
 }

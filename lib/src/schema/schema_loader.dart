@@ -20,6 +20,7 @@ final class SchemaLoader {
     'jsonLd': TargetType.jsonLd,
     'sitemap': TargetType.sitemap,
     'robots': TargetType.robots,
+    'alternate': TargetType.alternate,
   };
 
   static const _valueTypes = {

@@ -10,7 +10,7 @@ final class SourceResolver {
 
   final Map<SourceType, SourceProvider> _providers;
 
-  Object? resolve(Source source) {
+  Object? resolve2(Source source) {
     final provider = _providers[source.type];
 
     if (provider == null) {
@@ -20,5 +20,24 @@ final class SourceResolver {
     }
 
     return provider.read(source.key);
+  }
+
+  Object? resolve(String source) {
+    final separator = source.indexOf('.');
+
+    // По умолчанию — ARB
+    if (separator == -1) {
+      return _providers[SourceType.arb]?.read(source);
+    }
+
+    final type = switch (source.substring(0, separator)) {
+      'config' => SourceType.config,
+      'arb' => SourceType.arb,
+      _ => throw UnsupportedError('Unknown source: $source'),
+    };
+
+    final key = source.substring(separator + 1);
+
+    return _providers[type]?.read(key);
   }
 }
