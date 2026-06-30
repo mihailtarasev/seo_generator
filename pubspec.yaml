@@ -1,5 +1,5 @@
 name: seo_generator
-description: Declarative generator of HTML and structured documents from ARB localization files.
+description: SEO Generator for multilingual static websites.
 version: 1.0.0-dev.1
 
 homepage: https://github.com/yourname/seo_generator

@@ -1,6 +1,7 @@
 # seo_generator
 
-Declarative generator of HTML and structured documents from ARB localization files.
+SEO Generator for multilingual static websites.
+Supports locale files in JSON and ARB formats.
 
 ## Features
 

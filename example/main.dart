@@ -3,9 +3,10 @@ import 'package:seo_generator/framework/seo_generator.dart';
 Future<void> main() async {
   await GenerationContext(
     schemaPath: 'example/assets/schema.json',
-    templatePath: 'example/assets/index.html',
+    templatePath: 'example/assets/template/index.html',
     configPath: 'example/assets/config.json',
-    arbDirectory: 'example/assets',
+    localeDirectory: 'example/assets/locales/json',
+    localeFormat: '.json',
     outputDirectory: 'example/output',
   ).generate();
 }

@@ -16,7 +16,7 @@ export 'src/model/validation.dart';
 // Schema
 export 'src/schema/schema_loader.dart';
 // Source
-export 'src/source/arb_provider.dart';
+export 'src/source/locale_provider.dart';
 export 'src/source/config_provider.dart';
 export 'src/source/source_provider.dart';
 export 'src/source/source_resolver.dart';

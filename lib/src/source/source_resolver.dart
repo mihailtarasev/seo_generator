@@ -25,14 +25,13 @@ final class SourceResolver {
   Object? resolve(String source) {
     final separator = source.indexOf('.');
 
-    // По умолчанию — ARB
     if (separator == -1) {
-      return _providers[SourceType.arb]?.read(source);
+      return _providers[SourceType.locale]?.read(source);
     }
 
     final type = switch (source.substring(0, separator)) {
       'config' => SourceType.config,
-      'arb' => SourceType.arb,
+      'locale' => SourceType.locale,
       _ => throw UnsupportedError('Unknown source: $source'),
     };
 

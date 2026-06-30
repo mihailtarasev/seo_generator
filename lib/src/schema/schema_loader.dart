@@ -11,7 +11,7 @@ final class SchemaLoader {
   const SchemaLoader();
 
   static const _sourceTypes = {
-    'arb': SourceType.arb,
+    'locale': SourceType.locale,
     'config': SourceType.config,
   };
 
@@ -74,7 +74,7 @@ final class SchemaLoader {
     }
     if (source is String) {
       return Source(
-        type: SourceType.arb,
+        type: SourceType.locale,
         key: source,
       );
     }

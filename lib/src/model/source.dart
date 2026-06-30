@@ -1,5 +1,5 @@
 enum SourceType {
-  arb,
+  locale,
   config,
 }
 
