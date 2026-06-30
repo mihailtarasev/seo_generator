@@ -11,7 +11,7 @@ class SitemapModel {
   List<AlternateModel>? alternate;
 
   late final Map<String, void Function(dynamic)> _setters = {
-    'url': (v) => url?.add(v),
+    'sitemap': (v) => url = v as List<dynamic>,
     'alternate': (v) => alternate = (v as List<dynamic>).map((e) {
           (e as Map<String, dynamic>);
           return AlternateModel(

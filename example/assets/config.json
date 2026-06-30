@@ -3,6 +3,10 @@
   "robots": "https://battle-with-passions.com/sitemap.xml",
   "ogImage": "https://battle-with-passions.com/ogimage.jpg",
   "ogAlternate": ["en_US", "ru_RU"],
+  "sitemap": [
+    "https://battle-with-passions.com/", 
+    "https://battle-with-passions.com/ru/"
+  ],
   "alternate": [
     {
       "hreflang":"en-US", 

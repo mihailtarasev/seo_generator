@@ -41,7 +41,7 @@ ${_model.alternate?.map((u) => '''
 ''').join()}
 </urlset>
 ''';
-    final sitemapFile = File('$outputDirectory/$locale/sitemap.xml');
+    final sitemapFile = File('$outputDirectory/sitemap.xml');
     await sitemapFile.create(recursive: true);
     await sitemapFile.writeAsString(value);
   }

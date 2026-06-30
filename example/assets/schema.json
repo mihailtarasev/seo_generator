@@ -151,17 +151,10 @@
       }
     },
     {
-    "source": "seoUrl",
+    "source": "config.sitemap",
     "target": {
         "type": "sitemap",
-        "selector": "url"
-      }
-    },
-    {
-    "source": "config.siteUrl",
-    "target": {
-        "type": "sitemap",
-        "selector": "url"
+        "selector": "sitemap"
       }
     },
     {
